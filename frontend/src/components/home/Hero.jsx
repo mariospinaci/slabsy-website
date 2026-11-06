@@ -6,16 +6,14 @@ import { useT } from "@/lib/i18n";
 import { MaskLines } from "@/components/site/Reveal";
 import { SlabFrame } from "@/components/site/SlabFrame";
 import { EtsyButton } from "@/components/site/EtsyButton";
+import { HERO_SUB } from "@/data/copy";
 
 const COPY = {
   over: { it: "Graded comics display stand", en: "Graded comics display stand" },
   lines: { it: ["La tua slab", "merita la", "scena."], en: ["Your slab", "deserves the", "spotlight."] },
-  sub: {
-    it: "Slabsy è il sistema espositivo per fumetti gradati CGC, CBCS ed ECG: a parete o da appoggio, con spessori intercambiabili fino a 30 mm e label personalizzabili.",
-    en: "Slabsy is the display system for CGC, CBCS and ECG graded comics: wall-mounted or tabletop, with interchangeable shims up to 30 mm and customizable labels.",
-  },
+  sub: HERO_SUB,
   cta: { it: "Scopri i modelli", en: "Explore the models" },
-  stats: { it: [["4", "modelli"], ["30 mm", "spessore max"], ["3+", "standard slab"]], en: [["4", "models"], ["30 mm", "max thickness"], ["3+", "slab standards"]] },
+  stats: { it: [["4", "modelli"], ["30 mm", "spessore max"], ["PLA", "stampa 3D"]], en: [["4", "models"], ["30 mm", "max thickness"], ["PLA", "3D printed"]] },
   badge: { it: "SPESSORI INTERCAMBIABILI · FINO A 30 MM · ", en: "INTERCHANGEABLE SHIMS · UP TO 30 MM · " },
 };
 

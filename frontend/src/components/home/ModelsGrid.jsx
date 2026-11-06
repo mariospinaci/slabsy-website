@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { useT } from "@/lib/i18n";
@@ -7,12 +8,35 @@ import { SlabFrame } from "@/components/site/SlabFrame";
 
 const TYPE = { wall: { it: "A parete", en: "Wall-mounted" }, stand: { it: "Da appoggio", en: "Tabletop" } };
 
+const ViewCycler = ({ m, hover }) => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    if (!hover) { setIdx(0); return undefined; }
+    setIdx(1);
+    const id = setInterval(() => setIdx((n) => (n + 1) % m.gallery.length), 1100);
+    return () => clearInterval(id);
+  }, [hover, m.gallery.length]);
+  return (
+    <>
+      {m.gallery.map((src, n) => (
+        <img key={src} src={src} alt={n === 0 ? `${m.name} – Slabsy` : ""} loading="lazy" className={`absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${idx === n ? "scale-100 opacity-100" : "scale-[1.04] opacity-0"}`} />
+      ))}
+      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5" data-testid={`model-card-${m.id}-dots`}>
+        {m.gallery.map((src, n) => <span key={src} className={`h-1.5 rounded-full bg-[#0B1320] transition-[width,opacity] duration-500 ${idx === n ? "w-6 opacity-90" : "w-1.5 opacity-40"}`} />)}
+      </div>
+    </>
+  );
+};
+
 export const ModelCard = ({ m, i }) => {
   const { t, p, lang } = useT();
+  const [hover, setHover] = useState(false);
   return (
     <Reveal delay={(i % 2) * 0.12} className={i % 2 ? "md:translate-y-20" : ""}>
-      <Link to={`${p("products")}#${m.id}`} data-testid={`model-card-${m.id}`} className="group block">
-        <SlabFrame src={m.img} alt={`${m.name} – Slabsy`} label={m.name} sub={formatPrice(m.price, lang)} accent={m.accent} />
+      <Link to={`${p("products")}#${m.id}`} data-testid={`model-card-${m.id}`} className="group block" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <SlabFrame label={m.name} sub={formatPrice(m.price, lang)} accent={m.accent}>
+          <ViewCycler m={m} hover={hover} />
+        </SlabFrame>
         <div className="mt-6 flex items-start justify-between gap-6 px-1">
           <div>
             <p className="overline">{t(TYPE[m.type])}{m.label ? ` · ${t({ it: "con label", en: "with label" })}` : ""}</p>

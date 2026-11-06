@@ -6,6 +6,7 @@ import { Seo } from "@/components/site/Seo";
 import { PageHero } from "@/components/site/PageHero";
 import { FaqList } from "@/components/site/FaqList";
 import { FinalCta } from "@/components/site/FinalCta";
+import { SEO } from "@/data/seo";
 
 export default function Faq() {
   const { t, p } = useT();
@@ -16,7 +17,7 @@ export default function Faq() {
   };
   return (
     <>
-      <Seo title={t({ it: "FAQ · Domande frequenti su Slabsy", en: "FAQ · Frequently asked questions about Slabsy" })} description={t({ it: "Compatibilità con CGC, CBCS ed ECG, spessori fino a 30 mm, label personalizzate, differenze tra modelli e acquisto su Etsy.", en: "Compatibility with CGC, CBCS and ECG, shims up to 30 mm, custom labels, model differences and buying on Etsy." })} jsonLd={ld} />
+      <Seo title={t(SEO.faq.title)} description={t(SEO.faq.desc)} jsonLd={ld} />
       <PageHero testid="faq-hero" over="FAQ" lines={t({ it: ["Domande", "frequenti."], en: ["Frequently asked", "questions."] })} intro={t({ it: "Tutto quello che c'è da sapere su compatibilità, spessori, label e acquisto.", en: "Everything you need to know about compatibility, shims, labels and buying." })} />
       <section className="mx-auto grid max-w-[1440px] gap-12 px-5 pb-24 sm:px-8 lg:grid-cols-12 lg:px-12">
         <div className="lg:col-span-8"><FaqList /></div>

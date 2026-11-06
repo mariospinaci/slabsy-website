@@ -1,13 +1,11 @@
-export const PRODUCTS = [
+const ALL = [
   {
     id: "wall-v1",
     name: "SLABSY WALL V.1",
     type: "wall",
     price: 32,
     label: false,
-    accent: "#C9694A",
-    img: "/img/wall-v1.webp",
-    gallery: ["/img/wall-v1.webp", "/img/wall-v1-empty.webp", "/img/wall-v1-side.webp"],
+    accent: "#EFE9DD",
     short: { it: "Espositore a parete, montaggio rapido, design moderno.", en: "Wall display, quick mounting, modern design." },
     desc: {
       it: "Espositore da parete dal design moderno, progettato per un montaggio rapido. È privo di alloggiamento per etichetta: la variante più essenziale, per chi vuole solo la slab.",
@@ -20,9 +18,7 @@ export const PRODUCTS = [
     type: "wall",
     price: 39,
     label: true,
-    accent: "#D9A33A",
-    img: "/img/wall-v2.webp",
-    gallery: ["/img/wall-v2.webp", "/img/wall-v2-empty.webp", "/img/wall-v2-side.webp"],
+    accent: "#C9A45C",
     short: { it: "Espositore a parete, montaggio rapido, con alloggio label.", en: "Wall display, quick mounting, with label slot." },
     desc: {
       it: "Espositore da parete dal design moderno, progettato per un montaggio rapido. È dotato di alloggiamento per etichetta removibile e personalizzabile. N°1 etichetta inclusa nel prezzo.",
@@ -35,9 +31,7 @@ export const PRODUCTS = [
     type: "stand",
     price: 27,
     label: false,
-    accent: "#6E9A80",
-    img: "/img/stand-v1.webp",
-    gallery: ["/img/stand-v1.webp", "/img/stand-v1-front.webp", "/img/stand-v1-side.webp"],
+    accent: "#EFE9DD",
     short: { it: "Espositore da appoggio, base stabile, inclinazione ottimale.", en: "Tabletop stand, stable base, optimal angle." },
     desc: {
       it: "Espositore da appoggio con base stabile e inclinazione ottimale. È privo di alloggiamento per etichetta. Perfetto su mobili, mensole e scrivanie.",
@@ -50,9 +44,7 @@ export const PRODUCTS = [
     type: "stand",
     price: 34,
     label: true,
-    accent: "#4F74A8",
-    img: "/img/stand-v2.webp",
-    gallery: ["/img/stand-v2.webp", "/img/stand-v2-empty.webp", "/img/stand-v2-side.webp"],
+    accent: "#C9A45C",
     short: { it: "Espositore da appoggio, base stabile, con alloggio label.", en: "Tabletop stand, stable base, with label slot." },
     desc: {
       it: "Espositore da appoggio con base stabile e inclinazione ottimale. È dotato di alloggiamento per etichetta removibile e personalizzabile. N°1 etichetta inclusa nel prezzo.",
@@ -60,6 +52,14 @@ export const PRODUCTS = [
     },
   },
 ];
+
+// Display order: Stand, Stand + label, Wall, Wall + label. Image 1 = three-quarter view.
+const ORDER = ["stand-v1", "stand-v2", "wall-v1", "wall-v2"];
+export const PRODUCTS = ORDER.map((id) => {
+  const p = ALL.find((x) => x.id === id);
+  const gallery = [1, 2, 3, 4].map((n) => `/img/${id}-${n}.webp`);
+  return { ...p, img: gallery[0], gallery };
+});
 
 export const formatPrice = (n, lang) =>
   new Intl.NumberFormat(lang === "en" ? "en-IE" : "it-IT", { style: "currency", currency: "EUR" }).format(n);

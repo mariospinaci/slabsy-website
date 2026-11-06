@@ -21,6 +21,13 @@ Home (what/why/different), Products (4 models, shims, labels, services), About, 
 - Full bilingual site, kinetic masked hero, 3D tilt + parallax slab frame, slow marquee, models grid, aligned bento with interactive shim simulator, philosophy section, FAQ accordion, 3 guides, contact form with email notification
 - Etsy buttons open "coming soon" dialog (ETSY_URL empty in src/data/site.js)
 
+## Iteration 2 (2026-11-06)
+- All renders recolored black (public/img/{id}-1..4.webp, view 1 = three-quarter) and AI environment images re-edited with black stands
+- Product order: Stand V.1, Stand V.2 (label), Wall V.1, Wall V.2 (label); collection cards cycle views on hover
+- PLA / 3D printing copy + pros (MaterialSection on Home & About, specs, FAQ, llms.txt, JSON-LD material/color)
+- Label gallery (6 CSS styles + live text preview) on /prodotti#label
+- Static prerender: `yarn build` runs scripts/prerender.mjs → 18 HTML pages with full text, meta, hreflang, JSON-LD (data from src/data/*)
+
 ## Backlog
 - P0: Insert Etsy shop URL (src/data/site.js ETSY_URL) and per-product Etsy links; real product photos; technical specs (dimensions, material, colors)
 - P1: Prerendering/SSR of pages for AI crawlers that don't run JS; social profile links; Google Search Console + sitemap submission

@@ -21,6 +21,13 @@ export const FAQ = [
     },
   },
   {
+    q: { it: "Di che materiale sono gli espositori Slabsy?", en: "What are Slabsy displays made of?" },
+    a: {
+      it: "Sono realizzati con stampa 3D in PLA nero, una bioplastica ottenuta da fonti vegetali rinnovabili. Il PLA è leggero ma rigido, e la stampa 3D garantisce precisione negli alloggi e permette di produrre spessori e label su misura. Come ogni oggetto in PLA, va tenuto lontano da fonti di calore elevate e dalla luce solare diretta prolungata.",
+      en: "They are 3D printed in black PLA, a bioplastic made from renewable plant sources. PLA is light yet rigid, and 3D printing ensures precise slots and allows custom shims and labels. Like any PLA object, keep it away from strong heat and prolonged direct sunlight.",
+    },
+  },
+  {
     q: { it: "Che differenza c'è tra V.1 e V.2?", en: "What's the difference between V.1 and V.2?" },
     a: {
       it: "La V.1 è la variante base, senza alloggio per etichetta. La V.2 ha un alloggiamento per una label removibile e personalizzabile, e include N°1 etichetta nel prezzo.",

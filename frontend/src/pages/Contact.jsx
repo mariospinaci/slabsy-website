@@ -8,6 +8,7 @@ import { Seo } from "@/components/site/Seo";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { EtsyButton } from "@/components/site/EtsyButton";
+import { SEO } from "@/data/seo";
 
 const API = process.env.REACT_APP_BACKEND_URL ? `${process.env.REACT_APP_BACKEND_URL}/api` : null;
 const TOPICS = [
@@ -74,7 +75,7 @@ export default function Contact() {
   const { t } = useT();
   return (
     <>
-      <Seo title={t({ it: "Contatti · Slabsy", en: "Contact · Slabsy" })} description={t({ it: "Contatta Slabsy per informazioni, label personalizzate e spessori su misura. info@slabsy.it · +39 328 924 7893.", en: "Contact Slabsy for information, custom labels and shims. info@slabsy.it · +39 328 924 7893." })} />
+      <Seo title={t(SEO.contact.title)} description={t(SEO.contact.desc)} />
       <PageHero testid="contact-hero" over={t({ it: "Contatti", en: "Contact" })} lines={t({ it: ["Parliamo della", "tua collezione."], en: ["Let's talk about", "your collection."] })} />
       <section className="mx-auto grid max-w-[1440px] gap-14 px-5 pb-28 sm:px-8 lg:grid-cols-12 lg:px-12">
         <Reveal className="lg:col-span-7"><ContactForm /></Reveal>

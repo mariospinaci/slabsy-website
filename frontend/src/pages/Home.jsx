@@ -11,14 +11,10 @@ import { Philosophy } from "@/components/home/Philosophy";
 import { FaqList } from "@/components/site/FaqList";
 import { FinalCta } from "@/components/site/FinalCta";
 import { MaskLines } from "@/components/site/Reveal";
+import { MaterialSection } from "@/components/home/MaterialSection";
+import { SEO as PAGE_SEO } from "@/data/seo";
 
-const SEO = {
-  title: { it: "Slabsy · Espositori per fumetti gradati CGC, CBCS, ECG", en: "Slabsy · Display stands for CGC, CBCS, ECG graded comics" },
-  desc: {
-    it: "Espositori premium da parete e da appoggio per fumetti gradati CGC, CBCS ed ECG. Spessori intercambiabili fino a 30 mm e label personalizzabili. Disponibili su Etsy.",
-    en: "Premium wall and tabletop display stands for CGC, CBCS and ECG graded comics. Interchangeable shims up to 30 mm and customizable labels. Available on Etsy.",
-  },
-};
+const SEO = PAGE_SEO.home;
 
 export default function Home() {
   const { t, p } = useT();
@@ -30,6 +26,7 @@ export default function Home() {
       <ThreeQuestions />
       <ModelsGrid />
       <FeatureBento />
+      <MaterialSection />
       <Philosophy />
       <section data-testid="faq-teaser" className="mx-auto grid max-w-[1440px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-12 lg:px-12 lg:py-36">
         <div className="lg:col-span-4">

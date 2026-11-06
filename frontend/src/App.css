@@ -171,6 +171,50 @@ input[type="range"].shim-range::-moz-range-thumb {
   cursor: grab;
 }
 
+/* Label gallery */
+.label-stage {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  background: radial-gradient(circle at 50% 30%, #2a3650, #0d1524 70%);
+  overflow: hidden;
+}
+.label-holder {
+  width: 84%;
+  padding: 9px 9px 14px;
+  border-radius: 6px 6px 10px 10px;
+  background: linear-gradient(180deg, #2b2b2d, #121214);
+  box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transform: perspective(700px) rotateX(14deg);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .label-holder { transform: perspective(700px) rotateX(0deg) translateY(-6px); }
+.label-strip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  aspect-ratio: 5.2 / 1;
+  padding: 0 6%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.label-small { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.12em; white-space: nowrap; }
+.label-title { font-family: "Big Shoulders Display", sans-serif; font-weight: 900; font-size: clamp(18px, 2.4vw, 28px); text-transform: uppercase; line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.label-noir { background: #0b0b0c; color: #c9a45c; border: 1px solid #c9a45c; }
+.label-pop { background: radial-gradient(#d6362e 22%, transparent 24%) 0 0 / 9px 9px, #f2c230; color: #111; }
+.label-pop .label-title { color: #fff; -webkit-text-stroke: 1.5px #111; text-shadow: 2px 2px 0 #111; }
+.label-pop .label-small { background: #111; color: #f2c230; padding: 2px 5px; }
+.label-cosmic { background: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 60%, #fff, transparent), radial-gradient(1.5px 1.5px at 45% 80%, #fff, transparent), linear-gradient(110deg, #1b1446, #3d1f72 55%, #0d2a5c); color: #f2eaff; }
+.label-golden { background: #efe3c4; color: #5a3a17; border: 2px double #8a6431; font-family: Georgia, serif; }
+.label-golden .label-title { font-family: Georgia, serif; font-weight: 700; font-style: italic; letter-spacing: 0.02em; }
+.label-neon { background: #07070d; color: #fff; box-shadow: inset 0 0 0 1px #ff3fb4, inset 0 0 14px rgba(0, 229, 255, 0.45); }
+.label-neon .label-title { color: #7ff3ff; text-shadow: 0 0 8px #00e5ff; }
+.label-sketch { background: #fbfaf6; color: #6b7280; border: 1px dashed #b7bcc6; }
+.label-sig { height: 70%; width: auto; }
+
 .prose-slabsy p { color: #c9cfd9; line-height: 1.8; }
 
 @media (prefers-reduced-motion: reduce) {

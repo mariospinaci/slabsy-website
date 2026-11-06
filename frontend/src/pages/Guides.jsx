@@ -5,6 +5,7 @@ import { GUIDES } from "@/data/guides";
 import { Seo } from "@/components/site/Seo";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
+import { SEO } from "@/data/seo";
 
 export const GuideCard = ({ g, i }) => {
   const { t, p } = useT();
@@ -27,7 +28,7 @@ export default function Guides() {
   const { t } = useT();
   return (
     <>
-      <Seo title={t({ it: "Guide · Come esporre i fumetti gradati | Slabsy", en: "Guides · How to display graded comics | Slabsy" })} description={t({ it: "Guide pratiche per esporre slab CGC, CBCS ed ECG: parete o appoggio, spessori per spillati e brossurati, label personalizzate e sketch label.", en: "Practical guides to display CGC, CBCS and ECG slabs: wall or tabletop, shims for staple-bound and perfect-bound comics, custom and sketch labels." })} />
+      <Seo title={t(SEO.guides.title)} description={t(SEO.guides.desc)} />
       <PageHero testid="guides-hero" over={t({ it: "Guide", en: "Guides" })} lines={t({ it: ["Esporre", "con metodo."], en: ["Display", "with method."] })} intro={t({ it: "Consigli pratici per valorizzare i tuoi fumetti gradati.", en: "Practical advice to make the most of your graded comics." })} />
       <section className="mx-auto grid max-w-[1440px] gap-x-8 gap-y-16 px-5 pb-28 sm:px-8 md:grid-cols-2 lg:grid-cols-3 lg:px-12">
         {GUIDES.map((g, i) => <GuideCard key={g.id} g={g} i={i} />)}

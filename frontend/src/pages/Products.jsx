@@ -10,6 +10,8 @@ import { SlabFrame } from "@/components/site/SlabFrame";
 import { EtsyButton } from "@/components/site/EtsyButton";
 import { ShimSimulator } from "@/components/home/ShimSimulator";
 import { FinalCta } from "@/components/site/FinalCta";
+import { LabelGallery } from "@/components/site/LabelGallery";
+import { SEO } from "@/data/seo";
 
 const TYPE = { wall: { it: "A parete", en: "Wall-mounted" }, stand: { it: "Da appoggio", en: "Tabletop" } };
 
@@ -28,7 +30,7 @@ const ProductRow = ({ m, i }) => {
       <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
         <Reveal className={`lg:col-span-7 ${i % 2 ? "lg:order-2" : ""}`}>
           <SlabFrame src={m.gallery[active]} alt={`${m.name} vista ${active + 1}`} label={m.name} sub={`0${i + 1} / 04`} accent={m.accent} />
-          <div className="mt-4 grid grid-cols-3 gap-3">
+          <div className="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
             {m.gallery.map((g, gi) => (
               <button key={g} onClick={() => setActive(gi)} data-testid={`product-${m.id}-thumb-${gi}`} className={`overflow-hidden rounded-xl border-2 transition-[border-color,opacity] duration-300 ${active === gi ? "border-[var(--gold)]" : "border-transparent opacity-60 hover:opacity-100"}`} aria-label={`${m.name} ${gi + 1}`}>
                 <img src={g} alt="" loading="lazy" className="aspect-[16/10] w-full object-cover" />
@@ -45,6 +47,8 @@ const ProductRow = ({ m, i }) => {
             <Spec k={t({ it: "Montaggio", en: "Mounting" })} v={t(TYPE[m.type])} />
             <Spec k={t({ it: "Alloggio label", en: "Label slot" })} v={m.label ? t({ it: "Sì, removibile", en: "Yes, removable" }) : t({ it: "No", en: "No" })} ok={m.label} />
             <Spec k={t({ it: "Label inclusa", en: "Label included" })} v={m.label ? "N°1" : "—"} ok={m.label} />
+            <Spec k={t({ it: "Materiale", en: "Material" })} v={t({ it: "PLA · stampa 3D", en: "PLA · 3D printed" })} ok />
+            <Spec k={t({ it: "Colore", en: "Color" })} v={t({ it: "Nero", en: "Black" })} />
             <Spec k={t({ it: "Spessori", en: "Shims" })} v={t({ it: "Intercambiabili, fino a 30 mm", en: "Interchangeable, up to 30 mm" })} ok />
             <Spec k={t({ it: "Compatibilità", en: "Compatibility" })} v="CGC · CBCS · ECG" ok />
           </dl>
@@ -90,7 +94,7 @@ const Extras = () => {
 };
 
 export default function Products() {
-  const { t, lang } = useT();
+  const { t } = useT();
   const { hash } = useLocation();
   useEffect(() => {
     if (!hash) return undefined;
@@ -107,16 +111,17 @@ export default function Products() {
     itemListElement: PRODUCTS.map((m, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      item: { "@type": "Product", name: m.name, brand: { "@type": "Brand", name: "Slabsy" }, image: SITE + m.img, description: t(m.desc), offers: { "@type": "Offer", price: m.price.toFixed(2), priceCurrency: "EUR" } },
+      item: { "@type": "Product", name: m.name, brand: { "@type": "Brand", name: "Slabsy" }, image: SITE + m.img, material: "PLA", color: t({ it: "Nero", en: "Black" }), description: t(m.desc), offers: { "@type": "Offer", price: m.price.toFixed(2), priceCurrency: "EUR" } },
     })),
   };
   return (
     <>
-      <Seo title={t({ it: "Prodotti · Espositori WALL e STAND per slab | Slabsy", en: "Products · WALL and STAND slab displays | Slabsy" })} description={t({ it: "Scopri i 4 modelli Slabsy: WALL V.1, WALL V.2, STAND V.1 e STAND V.2. Espositori per fumetti gradati con spessori intercambiabili e label personalizzabili.", en: "Discover the 4 Slabsy models: WALL V.1, WALL V.2, STAND V.1 and STAND V.2. Graded comic displays with interchangeable shims and customizable labels." })} jsonLd={ld} />
+      <Seo title={t(SEO.products.title)} description={t(SEO.products.desc)} jsonLd={ld} />
       <PageHero testid="products-hero" over={t({ it: "Listino · Luglio 2026", en: "Price list · July 2026" })} lines={t({ it: ["I modelli", "Slabsy."], en: ["The Slabsy", "models."] })} intro={t({ it: "Due famiglie, due varianti. WALL per la parete, STAND per l'appoggio; V.1 essenziale, V.2 con alloggio label removibile e personalizzabile.", en: "Two families, two variants. WALL for the wall, STAND for tabletops; essential V.1, or V.2 with a removable, customizable label slot." })} />
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         {PRODUCTS.map((m, i) => <ProductRow key={m.id} m={m} i={i} />)}
       </div>
+      <LabelGallery />
       <Extras />
       <FinalCta />
     </>

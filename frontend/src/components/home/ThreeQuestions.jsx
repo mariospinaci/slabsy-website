@@ -1,21 +1,7 @@
 import { useT } from "@/lib/i18n";
 import { Reveal, MaskLines } from "@/components/site/Reveal";
 import { SlabFrame } from "@/components/site/SlabFrame";
-
-const QA = [
-  {
-    q: { it: "Che cos'è Slabsy?", en: "What is Slabsy?" },
-    a: { it: "Un sistema di esposizione premium per fumetti gradati certificati. Non un semplice supporto: uno strumento progettato per trasformare la slab in un vero elemento espositivo, a parete o su mobili, mensole e scrivanie.", en: "A premium display system for certified graded comics. Not just a stand: a tool designed to turn the slab into a true display piece, on the wall or on furniture, shelves and desks." },
-  },
-  {
-    q: { it: "Perché sceglierlo?", en: "Why choose it?" },
-    a: { it: "Valorizza la presenza visiva della slab, garantisce stabilità e sicurezza, mantiene proporzioni eleganti e si integra in ambienti moderni e collezioni curate.", en: "It enhances the slab's visual presence, ensures stability and safety, keeps elegant proportions and blends into modern spaces and curated collections." },
-  },
-  {
-    q: { it: "Cosa lo rende diverso?", en: "What makes it different?" },
-    a: { it: "Un solo supporto, tante possibilità: spessori intercambiabili fino a 30 mm per slab di spillati e brossurati, label originali, personalizzate o da far firmare al tuo artista preferito.", en: "One display, many possibilities: interchangeable shims up to 30 mm for staple-bound and perfect-bound slabs, original or custom labels, or labels to have signed by your favourite artist." },
-  },
-];
+import { QA } from "@/data/copy";
 
 export const ThreeQuestions = () => {
   const { t } = useT();
@@ -29,7 +15,7 @@ export const ThreeQuestions = () => {
               <MaskLines lines={t({ it: ["Tre domande.", "Tre risposte."], en: ["Three questions.", "Three answers."] })} />
             </h2>
             <Reveal className="mt-10" delay={0.1}>
-              <SlabFrame src="/img/env-desk.webp" alt="Slabsy Stand V.2 su una scrivania" label="SLABSY · STAND V.2" sub="DESK" accent="#4F74A8" ratio="aspect-[5/4]" />
+              <SlabFrame src="/img/env-desk.webp" alt="Slabsy Stand V.2 su una scrivania" label="SLABSY · STAND V.2" sub="DESK" accent="#EFE9DD" ratio="aspect-[5/4]" />
             </Reveal>
           </div>
         </div>
