@@ -44,6 +44,10 @@ Home (what/why/different), Products (4 models, shims, labels, services), About, 
 - Clean label price €14 (clean.js, page, prerender, llms.txt)
 - New signature image clean-signature-table.webp (blank label on table, unbranded pen)
 
+## Iteration 7 (2026-11-06)
+- 3D relief block (client render LB-006, img/labels/relief-3d.webp); picker toggle "Sullo stand / Rilievo 3D": real render if RELIEF map in labels.js has the code, else illustrative CSS 3D view (rotates on pointer move)
+- Pending: real 3D renders for the other 15 labels + clean label → add to RELIEF map
+
 ## Backlog
 - P0: Insert Etsy shop URL (src/data/site.js ETSY_URL) and per-product Etsy links; real product photos; technical specs (dimensions, material, colors)
 - P1: Prerendering/SSR of pages for AI crawlers that don't run JS; social profile links; Google Search Console + sitemap submission

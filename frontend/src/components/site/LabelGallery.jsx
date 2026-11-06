@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
 import { useT } from "@/lib/i18n";
 import { LABELS, LABEL_PRICE } from "@/data/labels";
 import { DISCLAIMER } from "@/data/site";
@@ -12,13 +12,13 @@ const OPTIONS = [...LABELS, CLEAN_OPTION];
 // Label slot position inside stand-v2-label-preview.webp (percent)
 const SLOT = { left: "22.1%", width: "53.5%", top: "78.9%", height: "11.4%" };
 
-const Preview = ({ opt, t }) => (
+const Preview = ({ opt, t, view }) => (
   <div className="slab-frame" data-testid="label-preview">
     <div className="slab-label" style={{ "--accent": "#C9A45C" }}>
-      <span>STAND V.2</span>
+      <span>{view === "3d" ? "LABEL · 3D" : "STAND V.2"}</span>
       <span>{opt.code}</span>
     </div>
-    <div className="slab-window relative">
+    {view === "3d" ? <div className="slab-window"><Relief3D opt={opt} t={t} /></div> : <div className="slab-window relative">
       <img src="/img/stand-v2-label-preview.webp" alt={t({ it: "Slabsy Stand V.2 nero con label", en: "Black Slabsy Stand V.2 with label" })} className="block w-full" />
       <div className="absolute overflow-hidden rounded-[2px] bg-[#f6f5f1]" style={SLOT}>
         <AnimatePresence initial={false}>
@@ -31,7 +31,44 @@ const Preview = ({ opt, t }) => (
           </motion.div>
         </AnimatePresence>
       </div>
+    </div>}
+  </div>
+);
+
+const LAYERS = [0, 1.5, 3, 4.5, 6, 7.5, 9];
+
+const Label3D = ({ opt, t }) => {
+  const rx = useSpring(useMotionValue(56), { stiffness: 90, damping: 16 });
+  const rz = useSpring(useMotionValue(-20), { stiffness: 90, damping: 16 });
+  const onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    rx.set(40 + ((e.clientY - r.top) / r.height) * 30);
+    rz.set(-34 + ((e.clientX - r.left) / r.width) * 28);
+  };
+  const face = opt.img ? <img src={opt.img} alt="" className="h-full w-full object-cover" draggable="false" /> : <div className="h-full w-full bg-[#f2f1ec]" />;
+  return (
+    <div className="relative grid aspect-[16/10] place-items-center overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#c9c9c9,#8e8e8e_75%)] [perspective:1100px]" onPointerMove={onMove} onPointerLeave={() => { rx.set(56); rz.set(-20); }} data-testid="label-3d-view">
+      <motion.div className="relative aspect-[6/1] w-[78%] [transform-style:preserve-3d]" style={{ rotateX: rx, rotateZ: rz }}>
+        {LAYERS.map((z) => <div key={z} className="absolute inset-0 rounded-[3px] bg-[#141416]" style={{ transform: `translateZ(${z}px)` }} />)}
+        <div className="absolute inset-[3px] overflow-hidden rounded-[2px] shadow-[0_0_0_1px_rgba(0,0,0,0.4)]" style={{ transform: "translateZ(11px)" }}>{face}</div>
+      </motion.div>
+      <p className="absolute bottom-3 left-4 font-mono text-[11px] tracking-[0.12em] text-[#1b1b1d]">{t({ it: "Vista 3D illustrativa · muovi per ruotare", en: "Illustrative 3D view · move to rotate" })}</p>
     </div>
+  );
+};
+
+const Relief3D = ({ opt, t }) => opt.relief ? (
+  <div className="relative aspect-[16/10]" data-testid="label-3d-render">
+    <img src={opt.relief} alt={`Slabsy label ${opt.code} – 3D`} className="h-full w-full object-cover" />
+    <p className="absolute bottom-3 left-4 font-mono text-[11px] tracking-[0.12em] text-[#1b1b1d]">{t({ it: "Render 3D reale", en: "Real 3D render" })}</p>
+  </div>
+) : <Label3D opt={opt} t={t} />;
+
+const ViewToggle = ({ view, setView, t }) => (
+  <div className="mb-4 inline-flex rounded-full border border-[var(--line)] p-1" data-testid="label-view-toggle">
+    {[["stand", { it: "Sullo stand", en: "On the stand" }], ["3d", { it: "Rilievo 3D", en: "3D relief" }]].map(([k, l]) => (
+      <button key={k} type="button" onClick={() => setView(k)} data-testid={`label-view-${k}`} className={`rounded-full px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] transition-[background-color,color] duration-300 ${view === k ? "bg-[var(--paper)] text-[var(--ink)]" : "text-[var(--paper)]/75 hover:text-[var(--paper)]"}`}>{t(l)}</button>
+    ))}
   </div>
 );
 
@@ -77,6 +114,7 @@ const Relief = ({ t }) => (
 export const LabelGallery = () => {
   const { t, lang } = useT();
   const [sel, setSel] = useState(0);
+  const [view, setView] = useState("stand");
   const opt = OPTIONS[sel];
   const pick = (i) => {
     setSel(i);
@@ -102,7 +140,8 @@ export const LabelGallery = () => {
       <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div id="label-preview-anchor" className="min-w-0 lg:col-span-7">
           <div className="lg:sticky lg:top-28">
-            <Preview opt={opt} t={t} />
+            <ViewToggle view={view} setView={setView} t={t} />
+            <Preview opt={opt} t={t} view={view} />
             <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="font-mono text-xs tracking-[0.14em] text-[var(--gold)]" data-testid="label-selected-code">{opt.img ? opt.code : "CLEAN"}</p>

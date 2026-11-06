@@ -1,5 +1,8 @@
 export const LABEL_PRICE = 14;
 
+// Real 3D relief renders per label code (others use the illustrative 3D view)
+const RELIEF = { "LB-006": "/img/labels/relief-3d.webp" };
+
 export const LABELS = [
   ["LB-001", "Wall-Crawler (Red and Black)"],
   ["LB-002", "Wall-Crawler (Black and White)"],
@@ -17,4 +20,4 @@ export const LABELS = [
   ["LB-014", "First Shield"],
   ["LB-015", "The Super Guardian"],
   ["LB-016", "Unbroken Hero"],
-].map(([code, name]) => ({ code, name, img: `/img/labels/${code.toLowerCase()}.webp` }));
+].map(([code, name]) => ({ code, name, img: `/img/labels/${code.toLowerCase()}.webp`, relief: RELIEF[code] ?? null }));
