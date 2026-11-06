@@ -39,6 +39,11 @@ Home (what/why/different), Products (4 models, shims, labels, services), About, 
 ## Iteration 5 (2026-11-06)
 - Label gallery on /prodotti#label: 16 labels LB-001…LB-016 cropped from "SLABSY_listino etichette v2.pdf" (public/img/labels), €14 each VAT incl., disclaimer; data src/data/labels.js; in prerender + llms.txt; bento link
 
+## Iteration 6 (2026-11-06)
+- Label picker: select any of 16 labels or the clean label and see it applied on black Stand V.2 front render (stand-v2-label-preview.webp, slot % in LabelGallery.jsx)
+- Clean label price €14 (clean.js, page, prerender, llms.txt)
+- New signature image clean-signature-table.webp (blank label on table, unbranded pen)
+
 ## Backlog
 - P0: Insert Etsy shop URL (src/data/site.js ETSY_URL) and per-product Etsy links; real product photos; technical specs (dimensions, material, colors)
 - P1: Prerendering/SSR of pages for AI crawlers that don't run JS; social profile links; Google Search Console + sitemap submission

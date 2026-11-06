@@ -1,4 +1,5 @@
 export const CLEAN = {
+  price: 14,
   over: { it: "Label clean · Modelli V.2", en: "Clean labels · V.2 models" },
   lines: { it: ["Una tela", "bianca per", "il tuo artista."], en: ["A blank", "canvas for", "your artist."] },
   intro: {
