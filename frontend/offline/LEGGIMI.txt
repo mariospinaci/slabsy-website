@@ -1,0 +1,5 @@
+SLABSY - versione offline
+
+Fai doppio clic su index.html per aprire il sito nel browser.
+Serve una connessione internet solo per i caratteri tipografici (senza connessione il sito funziona con caratteri di sistema).
+Il modulo contatti e' sostituito da pulsanti email e telefono.

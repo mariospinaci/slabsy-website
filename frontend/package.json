@@ -64,6 +64,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build && node --no-warnings scripts/prerender.mjs",
+    "build:offline": "REACT_APP_OFFLINE=true PUBLIC_URL=. BUILD_PATH=offline GENERATE_SOURCEMAP=false craco build && node --no-warnings scripts/offline-fix.mjs",
     "test": "craco test"
   },
   "browserslist": {

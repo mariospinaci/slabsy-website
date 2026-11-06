@@ -1,5 +1,5 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { ROUTES } from "@/lib/i18n";
 import Layout from "@/components/site/Layout";
@@ -14,10 +14,12 @@ import CleanLabels from "@/pages/CleanLabels";
 
 const PAGES = [["home", Home], ["products", Products], ["clean", CleanLabels], ["about", About], ["faq", Faq], ["guides", Guides], ["contact", Contact]];
 const LANGS = ["it", "en"];
+// Offline export (double-click index.html) needs hash-based URLs
+const Router = process.env.REACT_APP_OFFLINE === "true" ? HashRouter : BrowserRouter;
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route element={<Layout />}>
           {LANGS.flatMap((l) => PAGES.map(([k, Page]) => <Route key={k + l} path={ROUTES[k][l]} element={<Page />} />))}
@@ -26,7 +28,7 @@ function App() {
         </Route>
       </Routes>
       <Toaster position="bottom-center" theme="dark" />
-    </BrowserRouter>
+    </Router>
   );
 }
 

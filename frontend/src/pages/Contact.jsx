@@ -71,6 +71,19 @@ const ContactForm = () => {
   );
 };
 
+const OFFLINE = process.env.REACT_APP_OFFLINE === "true";
+
+const DirectContact = () => {
+  const { t } = useT();
+  return (
+    <div className="grid gap-4" data-testid="contact-direct">
+      <p className="text-lg text-[#c9cfd9]">{t({ it: "Scrivici o chiamaci direttamente:", en: "Write or call us directly:" })}</p>
+      <a href={`mailto:${EMAIL}`} data-testid="contact-direct-email" className="btn-gold inline-flex items-center justify-center gap-3 rounded-full px-7 py-5 text-base"><Mail size={18} />{EMAIL}</a>
+      <a href={PHONE_HREF} data-testid="contact-direct-phone" className="btn-ghost inline-flex items-center justify-center gap-3 rounded-full px-7 py-5 text-base"><Phone size={18} />{PHONE}</a>
+    </div>
+  );
+};
+
 export default function Contact() {
   const { t } = useT();
   return (
@@ -78,7 +91,7 @@ export default function Contact() {
       <Seo title={t(SEO.contact.title)} description={t(SEO.contact.desc)} />
       <PageHero testid="contact-hero" over={t({ it: "Contatti", en: "Contact" })} lines={t({ it: ["Parliamo della", "tua collezione."], en: ["Let's talk about", "your collection."] })} />
       <section className="mx-auto grid max-w-[1440px] gap-14 px-5 pb-28 sm:px-8 lg:grid-cols-12 lg:px-12">
-        <Reveal className="lg:col-span-7"><ContactForm /></Reveal>
+        <Reveal className="lg:col-span-7">{OFFLINE ? <DirectContact /> : <ContactForm />}</Reveal>
         <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.1}>
           <div className="space-y-8">
             <a href={`mailto:${EMAIL}`} data-testid="contact-email-link" className="group flex items-center gap-5">
