@@ -10,7 +10,6 @@ import { SlabFrame } from "@/components/site/SlabFrame";
 import { EtsyButton } from "@/components/site/EtsyButton";
 import { ShimSimulator } from "@/components/home/ShimSimulator";
 import { FinalCta } from "@/components/site/FinalCta";
-import { LabelGallery } from "@/components/site/LabelGallery";
 import { SEO } from "@/data/seo";
 
 const TYPE = { wall: { it: "A parete", en: "Wall-mounted" }, stand: { it: "Da appoggio", en: "Tabletop" } };
@@ -78,14 +77,13 @@ const Extras = () => {
         <Reveal className="rounded-3xl border border-[var(--line)] bg-[var(--ink-2)] p-6 sm:p-8 md:col-span-2" delay={0.08} data-testid="extras-labels">
           <Tag className="text-[var(--gold)]" size={26} strokeWidth={1.5} />
           <h3 className="font-display mt-6 text-3xl font-extrabold uppercase leading-none">{t({ it: "Label", en: "Labels" })}</h3>
-          <p className="mt-3 text-sm text-[#c9cfd9]">{t({ it: "Label originali e personalizzate per i modelli V.2, e label da far firmare o sketchare al tuo artista preferito.", en: "Original and custom labels for V.2 models, and labels to have signed or sketched by your favourite artist." })}</p>
+          <p className="mt-3 text-sm text-[#c9cfd9]">{t({ it: "Label originali removibili per i modelli V.2 (N°1 inclusa), e label da far firmare o sketchare al tuo artista preferito.", en: "Removable original labels for V.2 models (one included), and labels to have signed or sketched by your favourite artist." })}</p>
         </Reveal>
         <Reveal className="rounded-3xl border border-[var(--line)] bg-[var(--paper)] p-6 text-[var(--ink)] sm:p-8 md:col-span-2" delay={0.12} data-testid="extras-services">
           <Ruler size={26} strokeWidth={1.5} />
           <h3 className="font-display mt-6 text-3xl font-extrabold uppercase leading-none">{t({ it: "Servizi & optional", en: "Services & extras" })}</h3>
           <ul className="mt-3 space-y-1 text-sm text-[#2a3445]">
             <li>— {t({ it: "Realizzazione spessori per basi espositive", en: "Custom shims for display bases" })}</li>
-            <li>— {t({ it: "Realizzazione etichette (label)", en: "Custom labels" })}</li>
           </ul>
         </Reveal>
       </div>
@@ -117,11 +115,10 @@ export default function Products() {
   return (
     <>
       <Seo title={t(SEO.products.title)} description={t(SEO.products.desc)} jsonLd={ld} />
-      <PageHero testid="products-hero" over={t({ it: "Listino · Luglio 2026", en: "Price list · July 2026" })} lines={t({ it: ["I modelli", "Slabsy."], en: ["The Slabsy", "models."] })} intro={t({ it: "Due famiglie, due varianti. WALL per la parete, STAND per l'appoggio; V.1 essenziale, V.2 con alloggio label removibile e personalizzabile.", en: "Two families, two variants. WALL for the wall, STAND for tabletops; essential V.1, or V.2 with a removable, customizable label slot." })} />
+      <PageHero testid="products-hero" over={t({ it: "Listino · Luglio 2026", en: "Price list · July 2026" })} lines={t({ it: ["I modelli", "Slabsy."], en: ["The Slabsy", "models."] })} intro={t({ it: "Due famiglie, due varianti. WALL per la parete, STAND per l'appoggio; V.1 essenziale, V.2 con alloggio label removibile.", en: "Two families, two variants. WALL for the wall, STAND for tabletops; essential V.1, or V.2 with a removable label slot." })} />
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         {PRODUCTS.map((m, i) => <ProductRow key={m.id} m={m} i={i} />)}
       </div>
-      <LabelGallery />
       <Extras />
       <FinalCta />
     </>

@@ -1,5 +1,4 @@
-import { PenTool, ShieldCheck, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { PenTool, ShieldCheck } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { Reveal, MaskLines } from "@/components/site/Reveal";
 import { ShimSimulator } from "@/components/home/ShimSimulator";
@@ -11,7 +10,7 @@ const Card = ({ className = "", children, testid, delay = 0 }) => (
 );
 
 export const FeatureBento = () => {
-  const { t, p } = useT();
+  const { t } = useT();
   return (
     <section data-testid="features-bento" className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
       <div className="max-w-3xl">
@@ -36,9 +35,8 @@ export const FeatureBento = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320] via-[#0B1320]/70 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
             <p className="overline">02 · Label</p>
-            <h3 className="font-display mt-3 text-3xl font-extrabold uppercase leading-none">{t({ it: "Label originali e personalizzate", en: "Original and custom labels" })}</h3>
-            <p className="mt-3 text-sm text-[#d6dbe3]">{t({ it: "Stile, colori e personaggi che ami. Facili da inserire, belle da collezionare.", en: "The style, colors and characters you love. Easy to insert, beautiful to collect." })}</p>
-            <Link to={`${p("products")}#label`} data-testid="bento-labels-gallery-link" className="link-under mt-4 inline-flex items-center gap-2 text-sm text-[var(--gold-2)]">{t({ it: "Vedi la galleria", en: "See the gallery" })}<ArrowUpRight size={14} /></Link>
+            <h3 className="font-display mt-3 text-3xl font-extrabold uppercase leading-none">{t({ it: "Label originali removibili", en: "Removable original labels" })}</h3>
+            <p className="mt-3 text-sm text-[#d6dbe3]">{t({ it: "Nei modelli V.2, N°1 inclusa. Facili da inserire, belle da collezionare.", en: "On V.2 models, one included. Easy to insert, beautiful to collect." })}</p>
           </div>
         </Card>
         <Card className="md:col-span-3" testid="bento-sketch" delay={0.05}>

@@ -21,8 +21,8 @@ const ALL = [
     accent: "#C9A45C",
     short: { it: "Espositore a parete, montaggio rapido, con alloggio label.", en: "Wall display, quick mounting, with label slot." },
     desc: {
-      it: "Espositore da parete dal design moderno, progettato per un montaggio rapido. È dotato di alloggiamento per etichetta removibile e personalizzabile. N°1 etichetta inclusa nel prezzo.",
-      en: "A modern wall display designed for quick mounting. It features a slot for a removable, customizable label. One label included in the price.",
+      it: "Espositore da parete dal design moderno, progettato per un montaggio rapido. È dotato di alloggiamento per etichetta removibile e intercambiabile. N°1 etichetta inclusa nel prezzo.",
+      en: "A modern wall display designed for quick mounting. It features a slot for a removable, interchangeable label. One label included in the price.",
     },
   },
   {
@@ -47,8 +47,8 @@ const ALL = [
     accent: "#C9A45C",
     short: { it: "Espositore da appoggio, base stabile, con alloggio label.", en: "Tabletop stand, stable base, with label slot." },
     desc: {
-      it: "Espositore da appoggio con base stabile e inclinazione ottimale. È dotato di alloggiamento per etichetta removibile e personalizzabile. N°1 etichetta inclusa nel prezzo.",
-      en: "A tabletop stand with a stable base and an optimal angle. It features a slot for a removable, customizable label. One label included in the price.",
+      it: "Espositore da appoggio con base stabile e inclinazione ottimale. È dotato di alloggiamento per etichetta removibile e intercambiabile. N°1 etichetta inclusa nel prezzo.",
+      en: "A tabletop stand with a stable base and an optimal angle. It features a slot for a removable, interchangeable label. One label included in the price.",
     },
   },
 ];

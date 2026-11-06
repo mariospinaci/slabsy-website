@@ -13,7 +13,7 @@ import { SEO } from "@/data/seo";
 const API = process.env.REACT_APP_BACKEND_URL ? `${process.env.REACT_APP_BACKEND_URL}/api` : null;
 const TOPICS = [
   ["product", { it: "Informazioni prodotto", en: "Product information" }],
-  ["labels", { it: "Label personalizzate", en: "Custom labels" }],
+  ["labels", { it: "Label", en: "Labels" }],
   ["shims", { it: "Spessori su misura", en: "Custom shims" }],
   ["other", { it: "Altro", en: "Other" }],
 ];

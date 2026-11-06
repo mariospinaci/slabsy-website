@@ -36,17 +36,17 @@ export const GUIDES = [
   },
   {
     id: "labels",
-    slug: { it: "label-personalizzate-sketch", en: "custom-and-sketch-labels" },
+    slug: { it: "label-e-sketch-label", en: "labels-and-sketch-labels" },
     img: "/img/env-desk.webp",
     read: 3,
-    title: { it: "Label personalizzate e sketch label: una slab, un pezzo unico", en: "Custom and sketch labels: one slab, one of a kind" },
+    title: { it: "Label e sketch label: una slab, un pezzo unico", en: "Labels and sketch labels: one slab, one of a kind" },
     excerpt: {
-      it: "Dalla label coordinata con i colori del personaggio a quella firmata dall'artista: come rendere la tua esposizione personale.",
-      en: "From labels matching your character's colors to ones signed by the artist: how to make your display personal.",
+      it: "Label removibili e sketch label da far firmare all'artista: come completare l'esposizione della tua slab.",
+      en: "Removable labels and sketch labels for your artist to sign: how to complete your slab display.",
     },
     body: [
-      { h: { it: "Più di un supporto", en: "More than a stand" }, p: { it: "I modelli WALL V.2 e STAND V.2 hanno un alloggiamento per label removibile e personalizzabile, con una label inclusa nel prezzo. È lo spazio che trasforma l'espositore in parte dell'opera.", en: "WALL V.2 and STAND V.2 feature a slot for a removable, customizable label, with one label included in the price. It's the space that turns the display into part of the artwork." } },
-      { h: { it: "Label originali e personalizzate", en: "Original and custom labels" }, p: { it: "Le label Slabsy sono pensate per richiamare lo stile, i colori e i personaggi che ami di più. Facili da inserire, belle da collezionare: puoi cambiarle quando cambi la slab in mostra.", en: "Slabsy labels are designed to echo the style, colors and characters you love most. Easy to insert, beautiful to collect: swap them whenever you change the slab on display." } },
+      { h: { it: "Più di un supporto", en: "More than a stand" }, p: { it: "I modelli WALL V.2 e STAND V.2 hanno un alloggiamento per label removibile e intercambiabile, con una label inclusa nel prezzo. È lo spazio che trasforma l'espositore in parte dell'opera.", en: "WALL V.2 and STAND V.2 feature a slot for a removable, interchangeable label, with one label included in the price. It's the space that turns the display into part of the artwork." } },
+      { h: { it: "Le label Slabsy", en: "Slabsy labels" }, p: { it: "Le label Slabsy sono quelle del catalogo ufficiale: facili da inserire, belle da collezionare. Essendo removibili, puoi cambiarle quando cambi la slab in mostra.", en: "Slabsy labels are those in the official catalogue: easy to insert, beautiful to collect. Since they are removable, you can swap them whenever you change the slab on display." } },
       { h: { it: "Sketch label: firmate dal tuo artista", en: "Sketch labels: signed by your artist" }, p: { it: "Per i più esigenti esistono label pensate per essere firmate o sketchate direttamente dal tuo artista preferito, ad esempio durante una fiera. Perché una slab può essere molto più di un fumetto certificato: può diventare un vero pezzo da collezione.", en: "For the most demanding collectors there are labels made to be signed or sketched directly by your favourite artist, for example at a convention. Because a slab can be much more than a certified comic: it can become a true collector's piece." } },
     ],
   },

@@ -4,20 +4,20 @@
 
 ## Products (prices VAT included, list of July 2026) — all 3D printed in black PLA
 - SLABSY STAND V.1 — €27.00 — tabletop stand, stable base, optimal viewing angle, no label slot.
-- SLABSY STAND V.2 — €34.00 — tabletop stand, stable base, optimal viewing angle, removable customizable label slot, 1 label included.
+- SLABSY STAND V.2 — €34.00 — tabletop stand, stable base, optimal viewing angle, removable label slot, 1 label included.
 - SLABSY WALL V.1 — €32.00 — wall-mounted display, quick mounting, modern design, no label slot.
-- SLABSY WALL V.2 — €39.00 — wall-mounted display, quick mounting, removable customizable label slot, 1 label included.
+- SLABSY WALL V.2 — €39.00 — wall-mounted display, quick mounting, removable label slot, 1 label included.
 
 ## Material
 - 3D printed in PLA, a bioplastic made from renewable plant sources (e.g. corn or sugar cane starch).
-- Light yet rigid; precise slots thanks to 3D printing; custom shims and labels made on demand.
+- Light yet rigid; precise slots thanks to 3D printing; custom shims made on demand.
 - Care: keep away from strong heat and prolonged direct sunlight.
 
 ## Key features
 - Interchangeable shims adapt the base to different slab thicknesses, up to 30 mm, for staple-bound and perfect-bound comics.
 - Compatible with CGC, CBCS, ECG and other certified slab formats ("modern" comics).
-- Original and custom labels (styles: Noir, Pop Art, Cosmic, Golden Age, Neon); Sketch Labels designed to be signed or sketched by artists.
-- Services: custom shims for display bases, custom labels.
+- Removable original labels from the Slabsy catalogue (no custom labels on request); Sketch Labels designed to be signed or sketched by artists.
+- Services: custom shims for display bases.
 - Design philosophy: "Subtract, don't add" — the display should not steal the scene, it should support it.
 
 ## Pages
@@ -25,7 +25,7 @@
 - [FAQ](https://www.slabsy.it/en/faq)
 - [Guide: how to display graded comics](https://www.slabsy.it/en/guides/how-to-display-graded-comics)
 - [Guide: staple-bound or perfect-bound shims](https://www.slabsy.it/en/guides/staple-bound-or-perfect-bound-shims)
-- [Guide: custom and sketch labels](https://www.slabsy.it/en/guides/custom-and-sketch-labels)
+- [Guide: labels and sketch labels](https://www.slabsy.it/en/guides/labels-and-sketch-labels)
 - [Prodotti (IT)](https://www.slabsy.it/prodotti)
 - [Contact](https://www.slabsy.it/en/contact)
 

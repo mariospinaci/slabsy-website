@@ -2,8 +2,8 @@ export const FAQ = [
   {
     q: { it: "Che cos'è Slabsy?", en: "What is Slabsy?" },
     a: {
-      it: "Slabsy è un sistema di esposizione premium per fumetti gradati e certificati (CGC, CBCS ed ECG). È disponibile in due versioni, da parete (Wall) e da appoggio (Stand), ognuna con o senza alloggio per label personalizzabile.",
-      en: "Slabsy is a premium display system for graded, certified comics (CGC, CBCS and ECG). It comes in two versions, wall-mounted (Wall) and tabletop (Stand), each with or without a slot for a customizable label.",
+      it: "Slabsy è un sistema di esposizione premium per fumetti gradati e certificati (CGC, CBCS ed ECG). È disponibile in due versioni, da parete (Wall) e da appoggio (Stand), ognuna con o senza alloggio per label removibile.",
+      en: "Slabsy is a premium display system for graded, certified comics (CGC, CBCS and ECG). It comes in two versions, wall-mounted (Wall) and tabletop (Stand), each with or without a slot for a removable label.",
     },
   },
   {
@@ -23,15 +23,15 @@ export const FAQ = [
   {
     q: { it: "Di che materiale sono gli espositori Slabsy?", en: "What are Slabsy displays made of?" },
     a: {
-      it: "Sono realizzati con stampa 3D in PLA nero, una bioplastica ottenuta da fonti vegetali rinnovabili. Il PLA è leggero ma rigido, e la stampa 3D garantisce precisione negli alloggi e permette di produrre spessori e label su misura. Come ogni oggetto in PLA, va tenuto lontano da fonti di calore elevate e dalla luce solare diretta prolungata.",
-      en: "They are 3D printed in black PLA, a bioplastic made from renewable plant sources. PLA is light yet rigid, and 3D printing ensures precise slots and allows custom shims and labels. Like any PLA object, keep it away from strong heat and prolonged direct sunlight.",
+      it: "Sono realizzati con stampa 3D in PLA nero, una bioplastica ottenuta da fonti vegetali rinnovabili. Il PLA è leggero ma rigido, e la stampa 3D garantisce precisione negli alloggi e permette di realizzare spessori su misura. Come ogni oggetto in PLA, va tenuto lontano da fonti di calore elevate e dalla luce solare diretta prolungata.",
+      en: "They are 3D printed in black PLA, a bioplastic made from renewable plant sources. PLA is light yet rigid, and 3D printing ensures precise slots and allows custom shims. Like any PLA object, keep it away from strong heat and prolonged direct sunlight.",
     },
   },
   {
     q: { it: "Che differenza c'è tra V.1 e V.2?", en: "What's the difference between V.1 and V.2?" },
     a: {
-      it: "La V.1 è la variante base, senza alloggio per etichetta. La V.2 ha un alloggiamento per una label removibile e personalizzabile, e include N°1 etichetta nel prezzo.",
-      en: "V.1 is the base variant, with no label slot. V.2 has a slot for a removable, customizable label and includes one label in the price.",
+      it: "La V.1 è la variante base, senza alloggio per etichetta. La V.2 ha un alloggiamento per una label removibile e intercambiabile, e include N°1 etichetta nel prezzo.",
+      en: "V.1 is the base variant, with no label slot. V.2 has a slot for a removable, interchangeable label and includes one label in the price.",
     },
   },
   {
@@ -44,14 +44,14 @@ export const FAQ = [
   {
     q: { it: "Posso personalizzare le label?", en: "Can I customize the labels?" },
     a: {
-      it: "Sì. Sono disponibili label originali e personalizzate, pensate per richiamare lo stile, i colori e i personaggi che ami. Esistono anche label pensate per essere firmate o sketchate direttamente dal tuo artista preferito.",
-      en: "Yes. Original and custom labels are available, designed to echo the style, colors and characters you love. There are also labels made to be signed or sketched directly by your favourite artist.",
+      it: "No, le label disponibili sono quelle del catalogo Slabsy: non realizziamo label su richiesta. Le label sono removibili, quindi puoi cambiarle quando vuoi.",
+      en: "No, the available labels are those in the Slabsy catalogue: we don't make labels on request. Labels are removable, so you can swap them whenever you like.",
     },
   },
   {
-    q: { it: "Realizzate spessori o etichette su richiesta?", en: "Do you make custom shims or labels?" },
+    q: { it: "Realizzate spessori su richiesta?", en: "Do you make custom shims?" },
     a: {
-      it: "Sì, tra i servizi e optional Slabsy ci sono la realizzazione di spessori per le basi espositive e la realizzazione di etichette. Scrivici dalla pagina Contatti con i dettagli della tua slab.",
+      it: "Sì, tra i servizi Slabsy c'è la realizzazione di spessori per le basi espositive. Scrivici dalla pagina Contatti con i dettagli della tua slab.",
       en: "Yes, Slabsy services include making shims for the display bases and making labels. Write to us from the Contact page with your slab's details.",
     },
   },

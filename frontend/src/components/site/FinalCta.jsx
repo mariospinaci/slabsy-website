@@ -15,7 +15,7 @@ export const FinalCta = () => {
         </h2>
         <Reveal className="mt-12 flex flex-wrap items-center gap-4" delay={0.2}>
           <EtsyButton testid="cta-etsy-button" />
-          <Link to={p("contact")} data-testid="cta-contact-link" className="btn-ghost rounded-full px-6 py-3.5 font-semibold">{t({ it: "Richiedi una personalizzazione", en: "Request a customization" })}</Link>
+          <Link to={p("contact")} data-testid="cta-contact-link" className="btn-ghost rounded-full px-6 py-3.5 font-semibold">{t({ it: "Scrivici", en: "Contact us" })}</Link>
         </Reveal>
       </div>
     </section>

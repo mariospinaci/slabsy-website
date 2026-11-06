@@ -63,7 +63,7 @@ export const ModelsGrid = () => {
               <MaskLines lines={t({ it: ["Quattro modelli.", "Un solo principio."], en: ["Four models.", "One principle."] })} />
             </h2>
           </div>
-          <p className="max-w-md text-[#c9cfd9]">{t({ it: "WALL per la parete, STAND per l'appoggio. Versione V.1 essenziale o V.2 con alloggio per label removibile e personalizzabile.", en: "WALL for the wall, STAND for the tabletop. Essential V.1 or V.2 with a slot for a removable, customizable label." })}</p>
+          <p className="max-w-md text-[#c9cfd9]">{t({ it: "WALL per la parete, STAND per l'appoggio. Versione V.1 essenziale o V.2 con alloggio per label removibile.", en: "WALL for the wall, STAND for the tabletop. Essential V.1 or V.2 with a slot for a removable label." })}</p>
         </div>
         <div className="mt-16 grid gap-x-8 gap-y-14 pb-20 md:grid-cols-2">
           {PRODUCTS.map((m, i) => <ModelCard key={m.id} m={m} i={i} />)}

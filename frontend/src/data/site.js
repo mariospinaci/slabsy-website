@@ -13,8 +13,8 @@ export const NAV = [
 ];
 
 export const MARQUEE = {
-  it: ["Compatibile CGC", "CBCS", "ECG", "Stampa 3D in PLA", "Spillati & brossurati", "Spessori fino a 30 mm", "Label personalizzate", "Sottrarre, non aggiungere"],
-  en: ["CGC compatible", "CBCS", "ECG", "3D printed in PLA", "Staple-bound & perfect-bound", "Shims up to 30 mm", "Custom labels", "Subtract, don't add"],
+  it: ["Compatibile CGC", "CBCS", "ECG", "Stampa 3D in PLA", "Spillati & brossurati", "Spessori fino a 30 mm", "Label removibili", "Sottrarre, non aggiungere"],
+  en: ["CGC compatible", "CBCS", "ECG", "3D printed in PLA", "Staple-bound & perfect-bound", "Shims up to 30 mm", "Removable labels", "Subtract, don't add"],
 };
 
 export const VALUES = [
