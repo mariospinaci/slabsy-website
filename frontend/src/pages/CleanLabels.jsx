@@ -57,7 +57,7 @@ const Gallery = () => {
   return (
     <section data-testid="clean-gallery" className="mx-auto max-w-[1440px] px-5 pb-16 sm:px-8 lg:px-12 lg:pb-24">
       <div className="grid gap-4 md:grid-cols-12">
-        <Reveal className="md:col-span-7"><SlabFrame src="/img/clean-signature-label.webp" alt={t({ it: "Mano che firma una label clean su un tavolo", en: "Hand signing a clean label on a table" })} label={t({ it: "FIRMA", en: "SIGNATURE" })} sub="01" accent="#C9A45C" ratio="aspect-[3/2]" testid="clean-gallery-signature" /></Reveal>
+        <Reveal className="md:col-span-7"><SlabFrame src="/img/clean-signature-label-r.webp" alt={t({ it: "Mano che firma una label clean su un tavolo", en: "Hand signing a clean label on a table" })} label={t({ it: "FIRMA", en: "SIGNATURE" })} sub="01" accent="#C9A45C" ratio="aspect-[3/2]" testid="clean-gallery-signature" /></Reveal>
         <Reveal className="md:col-span-5" delay={0.1}><SlabFrame src="/img/clean-finished.webp" alt={t({ it: "Label clean sketchata inserita in Slabsy Stand V.2", en: "Sketched clean label in a Slabsy Stand V.2" })} label={t({ it: "RISULTATO", en: "RESULT" })} sub="02" accent="#EFE9DD" ratio="aspect-[3/2] md:aspect-[20/19]" testid="clean-gallery-finished" /></Reveal>
       </div>
       <p className="mt-4 font-mono text-xs text-[var(--muted)]">{t(IMG_NOTE)}</p>
