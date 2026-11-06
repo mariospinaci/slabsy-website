@@ -44,7 +44,7 @@ export const Header = () => {
       </div>
       <AnimatePresence>
         {open && (
-          <motion.nav data-testid="mobile-menu" initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }} className="overflow-hidden lg:hidden">
+          <motion.nav data-testid="mobile-menu" initial={{ height: 0 }} animate={{ height: "calc(100svh - 64px)" }} exit={{ height: 0 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }} className="overflow-hidden lg:hidden">
             <div className="flex flex-col gap-1 px-5 pb-8 pt-6">
               {NAV.map((n, i) => (
                 <motion.div key={n.key} initial={{ y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.08 + i * 0.05 }}>

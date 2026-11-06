@@ -13,7 +13,7 @@ import { SEO } from "@/data/seo";
 const Block = ({ over, title, children, img, alt, label, flip }) => (
   <div className="grid items-center gap-12 border-t border-[var(--line)] py-20 lg:grid-cols-12 lg:py-28">
     <Reveal className={`lg:col-span-6 ${flip ? "lg:order-2 lg:col-start-7" : ""}`}>
-      <SlabFrame src={img} alt={alt} label={label} sub="SLABSY" ratio="aspect-[4/3]" />
+      <SlabFrame src={img} alt={alt} label={label} sub="SLABSY" accent="#C9A45C" ratio="aspect-[4/3]" />
     </Reveal>
     <div className={`lg:col-span-5 ${flip ? "" : "lg:col-start-8"}`}>
       <p className="overline">{over}</p>

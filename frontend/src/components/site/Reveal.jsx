@@ -26,7 +26,7 @@ export const MaskLines = ({ lines, className = "", lineClass = "", delay = 0.15,
   return (
     <motion.span className={`block ${className}`} initial="hidden" {...trigger}>
       {lines.map((line, i) => (
-        <span key={i} className="block overflow-hidden pb-[0.06em]">
+        <span key={i} className="-mt-[0.14em] block overflow-hidden pb-[0.06em] pt-[0.14em]">
           <motion.span className={`block ${typeof lineClass === "function" ? lineClass(i) : lineClass}`} variants={LINE} custom={delay + i * 0.11}>
             {line}
           </motion.span>
