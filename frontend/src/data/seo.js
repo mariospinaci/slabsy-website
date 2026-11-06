@@ -1,4 +1,9 @@
 export const SEO = {
+  clean: {
+    title: { it: "Label clean · Label da far firmare o sketchare all'artista | Slabsy", en: "Clean labels · Labels for artists to sign or sketch | Slabsy" },
+    desc: { it: "La label clean Slabsy è una label bianca per WALL V.2 e STAND V.2, da far firmare o sketchare al tuo artista preferito. La slab resta intatta e diventa un pezzo unico.", en: "The Slabsy clean label is a plain white label for WALL V.2 and STAND V.2, for your favourite artist to sign or sketch. The slab stays untouched and becomes one of a kind." },
+  },
+
   home: {
     title: { it: "Slabsy · Espositori per fumetti gradati CGC, CBCS, ECG", en: "Slabsy · Display stands for CGC, CBCS, ECG graded comics" },
     desc: { it: "Espositori premium da parete e da appoggio per fumetti gradati CGC, CBCS ed ECG, stampati in 3D in PLA. Spessori intercambiabili fino a 30 mm e label removibili.", en: "Premium wall and tabletop display stands for CGC, CBCS and ECG graded comics, 3D printed in PLA. Interchangeable shims up to 30 mm and removable labels." },

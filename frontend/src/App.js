@@ -10,8 +10,9 @@ import Faq from "@/pages/Faq";
 import Guides from "@/pages/Guides";
 import GuideArticle from "@/pages/GuideArticle";
 import Contact from "@/pages/Contact";
+import CleanLabels from "@/pages/CleanLabels";
 
-const PAGES = [["home", Home], ["products", Products], ["about", About], ["faq", Faq], ["guides", Guides], ["contact", Contact]];
+const PAGES = [["home", Home], ["products", Products], ["clean", CleanLabels], ["about", About], ["faq", Faq], ["guides", Guides], ["contact", Contact]];
 const LANGS = ["it", "en"];
 
 function App() {

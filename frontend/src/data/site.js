@@ -6,6 +6,7 @@ export const PHONE_HREF = "tel:+393289247893";
 
 export const NAV = [
   { key: "products", label: { it: "Prodotti", en: "Products" } },
+  { key: "clean", label: { it: "Label clean", en: "Clean labels" } },
   { key: "about", label: { it: "Chi siamo", en: "About" } },
   { key: "guides", label: { it: "Guide", en: "Guides" } },
   { key: "faq", label: { it: "FAQ", en: "FAQ" } },

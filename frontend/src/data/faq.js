@@ -44,8 +44,8 @@ export const FAQ = [
   {
     q: { it: "Posso personalizzare le label?", en: "Can I customize the labels?" },
     a: {
-      it: "No, le label disponibili sono quelle del catalogo Slabsy: non realizziamo label su richiesta. Le label sono removibili, quindi puoi cambiarle quando vuoi.",
-      en: "No, the available labels are those in the Slabsy catalogue: we don't make labels on request. Labels are removable, so you can swap them whenever you like.",
+      it: "Le label del catalogo Slabsy non si personalizzano su richiesta. Per un pezzo unico c'è la label clean: una label bianca per i modelli V.2 da far firmare o sketchare al tuo artista preferito.",
+      en: "Slabsy catalogue labels are not customized on request. For a one-of-a-kind piece there's the clean label: a plain white label for V.2 models for your favourite artist to sign or sketch.",
     },
   },
   {

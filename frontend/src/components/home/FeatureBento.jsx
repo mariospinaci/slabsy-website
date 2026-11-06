@@ -1,4 +1,5 @@
-import { PenTool, ShieldCheck } from "lucide-react";
+import { PenTool, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useT } from "@/lib/i18n";
 import { Reveal, MaskLines } from "@/components/site/Reveal";
 import { ShimSimulator } from "@/components/home/ShimSimulator";
@@ -10,7 +11,7 @@ const Card = ({ className = "", children, testid, delay = 0 }) => (
 );
 
 export const FeatureBento = () => {
-  const { t } = useT();
+  const { t, p } = useT();
   return (
     <section data-testid="features-bento" className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
       <div className="max-w-3xl">
@@ -41,9 +42,10 @@ export const FeatureBento = () => {
         </Card>
         <Card className="md:col-span-3" testid="bento-sketch" delay={0.05}>
           <PenTool className="text-[var(--gold)]" size={28} strokeWidth={1.5} />
-          <p className="overline mt-8">03 · Sketch label</p>
+          <p className="overline mt-8">03 · Label clean</p>
           <h3 className="font-display mt-3 text-3xl font-extrabold uppercase leading-none">{t({ it: "Firmata dal tuo artista", en: "Signed by your artist" })}</h3>
           <p className="mt-3 text-[#c9cfd9]">{t({ it: "Label pensate per essere firmate o sketchate direttamente dal tuo artista preferito. La slab diventa un pezzo unico.", en: "Labels made to be signed or sketched directly by your favourite artist. The slab becomes one of a kind." })}</p>
+          <Link to={p("clean")} data-testid="bento-clean-link" className="link-under mt-4 inline-flex items-center gap-2 text-sm text-[var(--gold-2)]">{t({ it: "Scopri la label clean", en: "Discover the clean label" })}<ArrowUpRight size={14} /></Link>
         </Card>
         <Card className="md:col-span-3" testid="bento-compat" delay={0.1}>
           <ShieldCheck className="text-[var(--gold)]" size={28} strokeWidth={1.5} />

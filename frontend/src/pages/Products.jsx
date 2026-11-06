@@ -62,7 +62,7 @@ const ProductRow = ({ m, i }) => {
 };
 
 const Extras = () => {
-  const { t } = useT();
+  const { t, p } = useT();
   return (
     <section data-testid="extras-section" className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
       <h2 className="font-display text-5xl font-extrabold uppercase leading-[0.9] sm:text-7xl">
@@ -77,7 +77,8 @@ const Extras = () => {
         <Reveal className="rounded-3xl border border-[var(--line)] bg-[var(--ink-2)] p-6 sm:p-8 md:col-span-2" delay={0.08} data-testid="extras-labels">
           <Tag className="text-[var(--gold)]" size={26} strokeWidth={1.5} />
           <h3 className="font-display mt-6 text-3xl font-extrabold uppercase leading-none">{t({ it: "Label", en: "Labels" })}</h3>
-          <p className="mt-3 text-sm text-[#c9cfd9]">{t({ it: "Label originali removibili per i modelli V.2 (N°1 inclusa), e label da far firmare o sketchare al tuo artista preferito.", en: "Removable original labels for V.2 models (one included), and labels to have signed or sketched by your favourite artist." })}</p>
+          <p className="mt-3 text-sm text-[#c9cfd9]">{t({ it: "Label originali removibili per i modelli V.2 (N°1 inclusa), e label clean da far firmare o sketchare al tuo artista preferito.", en: "Removable original labels for V.2 models (one included), and clean labels for your favourite artist to sign or sketch." })}</p>
+          <Link to={p("clean")} data-testid="extras-clean-link" className="link-under mt-4 inline-flex text-sm text-[var(--gold-2)]">{t({ it: "Scopri la label clean →", en: "Discover the clean label →" })}</Link>
         </Reveal>
         <Reveal className="rounded-3xl border border-[var(--line)] bg-[var(--paper)] p-6 text-[var(--ink)] sm:p-8 md:col-span-2" delay={0.12} data-testid="extras-services">
           <Ruler size={26} strokeWidth={1.5} />
