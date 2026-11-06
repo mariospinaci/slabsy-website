@@ -48,6 +48,32 @@ const Option = ({ opt, active, onPick, t }) => (
   </button>
 );
 
+const RELIEF = [
+  { it: "Strati sovrapposti in rilievo: il disegno esce dalla base.", en: "Stacked raised layers: the design rises from the base." },
+  { it: "Spessori reali che catturano luci e ombre e danno profondità.", en: "Real thickness that catches light and shadow for depth." },
+  { it: "Stampate in 3D in PLA, come gli espositori Slabsy.", en: "3D printed in PLA, just like Slabsy displays." },
+];
+
+const Relief = ({ t }) => (
+  <div className="mt-14 grid grid-cols-1 items-center gap-10 lg:grid-cols-12" data-testid="label-relief">
+    <Reveal className="min-w-0 lg:col-span-7">
+      <div className="slab-frame">
+        <div className="slab-label" style={{ "--accent": "#EFE9DD" }}><span>LABEL · 3D</span><span>LB-006</span></div>
+        <div className="slab-window aspect-[16/10]">
+          <img src="/img/labels/relief-3d.webp" alt={t({ it: "Dettaglio in rilievo 3D della label Slabsy LB-006 Weapon X", en: "3D relief detail of Slabsy label LB-006 Weapon X" })} loading="lazy" className="h-full w-full object-cover" />
+        </div>
+      </div>
+    </Reveal>
+    <div className="min-w-0 lg:col-span-5">
+      <p className="overline">{t({ it: "Label in rilievo", en: "Relief labels" })}</p>
+      <h3 className="font-display mt-4 text-4xl font-extrabold uppercase leading-[0.9] sm:text-6xl"><MaskLines lines={t({ it: ["Non sono piatte.", "Sono in 3D."], en: ["Not flat.", "Fully 3D."] })} /></h3>
+      <ul className="mt-8">
+        {RELIEF.map((r, i) => <li key={i} className="border-b border-[var(--line)] py-3 text-[#c9cfd9]">— {t(r)}</li>)}
+      </ul>
+    </div>
+  </div>
+);
+
 export const LabelGallery = () => {
   const { t, lang } = useT();
   const [sel, setSel] = useState(0);
@@ -65,14 +91,15 @@ export const LabelGallery = () => {
           <h2 className="font-display mt-4 text-5xl font-extrabold uppercase leading-[0.9] sm:text-7xl"><MaskLines lines={t({ it: ["Scegli la", "tua label."], en: ["Pick your", "label."] })} /></h2>
         </div>
         <div className="lg:col-span-5">
-          <p className="text-[#c9cfd9]">{t({ it: "16 label originali a tema e la label clean per WALL V.2 e STAND V.2. Selezionane una e guardala sullo Stand V.2 nero.", en: "16 original themed labels plus the clean label for WALL V.2 and STAND V.2. Pick one and see it on the black Stand V.2." })}</p>
+          <p className="text-[#c9cfd9]">{t({ it: "16 label originali a tema, in rilievo 3D, e la label clean per WALL V.2 e STAND V.2. Selezionane una e guardala sullo Stand V.2 nero.", en: "16 original themed 3D relief labels plus the clean label for WALL V.2 and STAND V.2. Pick one and see it on the black Stand V.2." })}</p>
           <p className="mt-4 flex items-baseline gap-3" data-testid="label-price">
             <span className="font-display text-5xl font-black text-[var(--gold)]">{formatPrice(LABEL_PRICE, lang)}</span>
             <span className="text-sm text-[var(--muted)]">{t({ it: "a label · IVA inclusa", en: "per label · VAT included" })}</span>
           </p>
         </div>
       </div>
-      <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-12">
+      <Relief t={t} />
+      <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div id="label-preview-anchor" className="min-w-0 lg:col-span-7">
           <div className="lg:sticky lg:top-28">
             <Preview opt={opt} t={t} />
