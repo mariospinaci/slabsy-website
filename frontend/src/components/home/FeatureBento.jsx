@@ -37,7 +37,8 @@ export const FeatureBento = () => {
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
             <p className="overline">02 · Label</p>
             <h3 className="font-display mt-3 text-3xl font-extrabold uppercase leading-none">{t({ it: "Label originali removibili", en: "Removable original labels" })}</h3>
-            <p className="mt-3 text-sm text-[#d6dbe3]">{t({ it: "Nei modelli V.2, N°1 inclusa. Facili da inserire, belle da collezionare.", en: "On V.2 models, one included. Easy to insert, beautiful to collect." })}</p>
+            <p className="mt-3 text-sm text-[#d6dbe3]">{t({ it: "16 label a tema, N°1 inclusa nei modelli V.2. Facili da inserire, belle da collezionare.", en: "16 themed labels, one included with V.2 models. Easy to insert, beautiful to collect." })}</p>
+            <Link to={`${p("products")}#label`} data-testid="bento-labels-gallery-link" className="link-under relative mt-4 inline-flex items-center gap-2 text-sm text-[var(--gold-2)]">{t({ it: "Vedi la galleria", en: "See the gallery" })}<ArrowUpRight size={14} /></Link>
           </div>
         </Card>
         <Card className="md:col-span-3" testid="bento-sketch" delay={0.05}>

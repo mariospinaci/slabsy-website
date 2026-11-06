@@ -11,6 +11,7 @@ import { EtsyButton } from "@/components/site/EtsyButton";
 import { ShimSimulator } from "@/components/home/ShimSimulator";
 import { FinalCta } from "@/components/site/FinalCta";
 import { SEO } from "@/data/seo";
+import { LabelGallery } from "@/components/site/LabelGallery";
 
 const TYPE = { wall: { it: "A parete", en: "Wall-mounted" }, stand: { it: "Da appoggio", en: "Tabletop" } };
 
@@ -120,6 +121,7 @@ export default function Products() {
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         {PRODUCTS.map((m, i) => <ProductRow key={m.id} m={m} i={i} />)}
       </div>
+      <LabelGallery />
       <Extras />
       <FinalCta />
     </>

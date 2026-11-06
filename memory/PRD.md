@@ -36,6 +36,9 @@ Home (what/why/different), Products (4 models, shims, labels, services), About, 
 - New page Label clean (/label-clean, /en/clean-labels): blank labels customized by the artist; 3 AI illustrative images (clean-artist/-signature/-finished); data in src/data/clean.js; nav, bento, products, FAQ, sitemap, llms.txt, prerender (20 pages)
 - Pending: label gallery from flyer page 2 (file not received yet)
 
+## Iteration 5 (2026-11-06)
+- Label gallery on /prodotti#label: 16 labels LB-001…LB-016 cropped from "SLABSY_listino etichette v2.pdf" (public/img/labels), €14 each VAT incl., disclaimer; data src/data/labels.js; in prerender + llms.txt; bento link
+
 ## Backlog
 - P0: Insert Etsy shop URL (src/data/site.js ETSY_URL) and per-product Etsy links; real product photos; technical specs (dimensions, material, colors)
 - P1: Prerendering/SSR of pages for AI crawlers that don't run JS; social profile links; Google Search Console + sitemap submission

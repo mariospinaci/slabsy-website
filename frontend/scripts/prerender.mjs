@@ -8,8 +8,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const build = join(root, "build");
 const load = (f) => import(pathToFileURL(join(root, "src/data", f)).href);
 
-const [{ PRODUCTS }, { FAQ }, { GUIDES }, { SEO }, copy, site, { SITE, ROUTES }, { CLEAN }] = await Promise.all(
-  ["products.js", "faq.js", "guides.js", "seo.js", "copy.js", "site.js", "routes.js", "clean.js"].map(load),
+const [{ PRODUCTS }, { FAQ }, { GUIDES }, { SEO }, copy, site, { SITE, ROUTES }, { CLEAN }, { LABELS, LABEL_PRICE }] = await Promise.all(
+  ["products.js", "faq.js", "guides.js", "seo.js", "copy.js", "site.js", "routes.js", "clean.js", "labels.js"].map(load),
 );
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -33,7 +33,7 @@ for (const l of ["it", "en"]) {
   pages.push({ l, paths: alt("home"), seo: SEO.home, ld: { "@context": "https://schema.org", "@type": "WebSite", name: "Slabsy", url: SITE },
     body: `<h1>${l === "en" ? "Your slab deserves the spotlight." : "La tua slab merita la scena."}</h1><p>${esc(L(copy.HERO_SUB, l))}</p>${copy.QA.map((q) => `<h2>${esc(L(q.q, l))}</h2><p>${esc(L(q.a, l))}</p>`).join("")}<section><h2>${l === "en" ? "The models" : "I modelli"}</h2>${PRODUCTS.map((m) => productBlock(m, l, false)).join("")}</section>${material(l)}<section><h2>FAQ</h2>${faqList(l, FAQ.slice(0, 4))}</section>` });
   pages.push({ l, paths: alt("products"), seo: SEO.products, ld: productsLd(l),
-    body: `<h1>${l === "en" ? "The Slabsy models" : "I modelli Slabsy"}</h1>${PRODUCTS.map((m) => productBlock(m, l, true)).join("")}<section><h2>${l === "en" ? "Services & extras" : "Servizi & optional"}</h2><ul><li>${l === "en" ? "Custom shims for display bases" : "Realizzazione spessori per basi espositive"}</li></ul></section>` });
+    body: `<h1>${l === "en" ? "The Slabsy models" : "I modelli Slabsy"}</h1>${PRODUCTS.map((m) => productBlock(m, l, true)).join("")}<section id="label"><h2>${l === "en" ? "Slabsy labels" : "Le label Slabsy"}</h2><p>${l === "en" ? "16 original themed labels for WALL V.2 and STAND V.2" : "16 label originali a tema per WALL V.2 e STAND V.2"} — ${price(LABEL_PRICE, l)} ${l === "en" ? "per label, VAT included" : "a label, IVA inclusa"}.</p><ul>${LABELS.map((x) => `<li>${x.code}: ${esc(x.name)}</li>`).join("")}</ul><p>${esc(L(site.DISCLAIMER, l))}</p></section><section><h2>${l === "en" ? "Services & extras" : "Servizi & optional"}</h2><ul><li>${l === "en" ? "Custom shims for display bases" : "Realizzazione spessori per basi espositive"}</li></ul></section>` });
   pages.push({ l, paths: alt("clean"), seo: SEO.clean, image: "/img/clean-artist.webp",
     body: `<h1>${esc(L(CLEAN.lines, l).join(" "))}</h1><p>${esc(L(CLEAN.intro, l))}</p><h2>${esc(L(CLEAN.what.h, l))}</h2><p>${esc(L(CLEAN.what.p, l))}</p><h2>${l === "en" ? "How it works" : "Come funziona"}</h2><ol>${CLEAN.steps.map((s) => `<li><strong>${esc(L(s.t, l))}</strong>: ${esc(L(s.d, l))}</li>`).join("")}</ol><h2>${l === "en" ? "Why a clean label" : "Perché una label clean"}</h2><ul>${CLEAN.why.map((w) => `<li><strong>${esc(L(w.t, l))}</strong>: ${esc(L(w.d, l))}</li>`).join("")}</ul><p>${esc(L(CLEAN.tip, l))}</p>` });
   pages.push({ l, paths: alt("about"), seo: SEO.about,
