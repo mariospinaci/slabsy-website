@@ -1,0 +1,120 @@
+{
+  "project_name": "SLABSY - Premium Comic Slab Display Stands",
+  "app_type": "marketing_site",
+  "archetype": "ARCHETYPE 5: LUXURY & ARCHITECTURAL PRECISION",
+  "brand_philosophy": {
+    "tagline_it": "Sottrarre, non aggiungere",
+    "tagline_en": "Subtract, don't add",
+    "core_motto_it": "Il display non deve rubare la scena, deve sostenerla.",
+    "core_motto_en": "The display shouldn't steal the scene, it should elevate it.",
+    "logo_spec": "Black comic speech-bubble containing bold white condensed 'SLABSY' logotype (preserved as-is)."
+  },
+  "colors": {
+    "background_dark": "#0B1320",
+    "background_card": "#131E31",
+    "background_elevated": "#1C2942",
+    "text_primary": "#F8FAFC",
+    "text_muted": "#94A3B8",
+    "accent_gold": "#C5A059",
+    "accent_gold_glow": "rgba(197, 160, 89, 0.25)",
+    "border_subtle": "#1E293B",
+    "border_gold_subtle": "rgba(197, 160, 89, 0.3)",
+    "product_variants": {
+      "blue": "#2563EB",
+      "sage_green": "#10B981",
+      "mustard": "#F59E0B",
+      "terracotta": "#EA580C"
+    }
+  },
+  "typography": {
+    "heading_font": "Outfit, sans-serif",
+    "body_font": "Inter, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "subsection_h3": "text-xl sm:text-2xl font-semibold",
+      "card_title": "text-lg sm:text-xl font-medium",
+      "body": "text-base text-slate-300 leading-relaxed",
+      "label_overline": "text-xs uppercase tracking-[0.2em] text-amber-400 font-semibold"
+    }
+  },
+  "routing_and_structure": {
+    "pages": [
+      {
+        "path": "/",
+        "name_it": "Home",
+        "name_en": "Home",
+        "sections": ["Hero kinetic reveal", "Compatibility ticker (CGC / CBCS / ECG)", "4 Models Spotlight", "Shim & Label Tech interactive demo", "Philosophy / Brand DNA", "FAQ teaser", "Call to Action"]
+      },
+      {
+        "path": "/prodotti",
+        "name_it": "Prodotti",
+        "name_en": "Products",
+        "features": ["4 Models detailed view (WALL V.1, WALL V.2, STAND V.1, STAND V.2)", "Color selector preview", "Shim thickness calculator (10mm to 30mm)", "Custom Sketch Label feature showcase"]
+      },
+      {
+        "path": "/about",
+        "name_it": "Chi Siamo",
+        "name_en": "About",
+        "features": ["Story of SLABSY", "3D Printing & Design Engineering", "Collector Mindset & Philosophy"]
+      },
+      {
+        "path": "/contatti",
+        "name_it": "Contatti",
+        "name_en": "Contact",
+        "features": ["Contact form saving to local state + email target info@slabsy.it", "Direct Etsy inquiry CTA", "Interactive response notification"]
+      },
+      {
+        "path": "/faq",
+        "name_it": "FAQ & Guide",
+        "name_en": "FAQ & Guides",
+        "features": ["Interactive Accordion for CGC/CBCS/ECG questions", "SEO Articles / Buyer Guides (How to display graded comics, Shim guide)"]
+      }
+    ]
+  },
+  "interactive_features": [
+    "Bilingual Switcher (Italian / English) with instantaneous translation context",
+    "Etsy Shop CTA Modal / Redirect Notice ('Acquista su Etsy' with notification dialog)",
+    "3D Product Render Tilt & Lighting Micro-Interactions",
+    "Interactive Shim & Slab Thickness Simulator (slider 10-30mm showing fit)",
+    "Custom Label Sketch Previewer for V.2 models"
+  ],
+  "image_urls": [
+    {
+      "category": "comic_display_interior",
+      "url": "https://images.unsplash.com/photo-1613669324287-af8a86028f98?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "description": "Graded comic slabs on display wall with soft museum lighting"
+    },
+    {
+      "category": "interior_dark_moody",
+      "url": "https://images.unsplash.com/photo-1786946332635-16f75eb058dd?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "description": "Minimal gallery wall display on dark charcoal architectural wall"
+    },
+    {
+      "category": "minimal_pedestal_product",
+      "url": "https://images.unsplash.com/photo-1667262646072-7de0f0395203?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "description": "Clean studio pedestals and geometric display stands"
+    },
+    {
+      "category": "collector_bookshelf",
+      "url": "https://images.unsplash.com/photo-1771708068419-92ac2e4ff990?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "description": "High-end collector library wall showcase"
+    }
+  ],
+  "motion_and_effects": {
+    "lenis_scroll": "Smooth momentum scroll feeling",
+    "hero_animation": "Masked line-by-line kinetic reveal on load",
+    "scroll_trigger": "Framer motion fade-up with staggered spring timing",
+    "card_hover": "Subtle 3D tilt transform, gold stroke highlight border, backdrop saturate",
+    "glassmorphism": "backdrop-blur-xl bg-[#0B1320]/80 border border-slate-800/80 (never fully transparent)"
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "All interactive elements MUST include data-testid attributes in kebab-case (e.g. data-testid='buy-on-etsy-button', data-testid='language-switcher-it').",
+    "Header and dropdowns MUST NOT have fully transparent background. Always use glassmorphism with dark blurred background bg-[#0B1320]/85 backdrop-blur-md.",
+    "Use react-router-dom for multi-page navigation seamlessly.",
+    "Ensure all components use .js or .jsx file extension as per React JavaScript structure.",
+    "Maintain strict APCA/WCAG contrast: text on dark background must maintain strong legibility.",
+    "Support both Italian and English via state/context with instant language switching across all pages."
+  ]
+}
