@@ -15,11 +15,14 @@ import CleanLabels from "@/pages/CleanLabels";
 const PAGES = [["home", Home], ["products", Products], ["clean", CleanLabels], ["about", About], ["faq", Faq], ["guides", Guides], ["contact", Contact]];
 const LANGS = ["it", "en"];
 // Offline export (double-click index.html) needs hash-based URLs
-const Router = process.env.REACT_APP_OFFLINE === "true" ? HashRouter : BrowserRouter;
+const OFFLINE = process.env.REACT_APP_OFFLINE === "true";
+const Router = OFFLINE ? HashRouter : BrowserRouter;
+// Subfolder exports (e.g. /test) serve the app under PUBLIC_URL
+const basename = OFFLINE ? undefined : process.env.PUBLIC_URL;
 
 function App() {
   return (
-    <Router>
+    <Router basename={basename}>
       <Routes>
         <Route element={<Layout />}>
           {LANGS.flatMap((l) => PAGES.map(([k, Page]) => <Route key={k + l} path={ROUTES[k][l]} element={<Page />} />))}

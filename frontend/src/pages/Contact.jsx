@@ -10,7 +10,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { EtsyButton } from "@/components/site/EtsyButton";
 import { SEO } from "@/data/seo";
 
-const API = process.env.REACT_APP_BACKEND_URL ? `${process.env.REACT_APP_BACKEND_URL}/api` : null;
+// Static exports on a PHP hosting post to their own endpoint instead of the Python backend
+const ENDPOINT = process.env.REACT_APP_CONTACT_URL || (process.env.REACT_APP_BACKEND_URL ? `${process.env.REACT_APP_BACKEND_URL}/api/contact` : null);
 const TOPICS = [
   ["product", { it: "Informazioni prodotto", en: "Product information" }],
   ["labels", { it: "Label", en: "Labels" }],
@@ -28,16 +29,18 @@ const ContactForm = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!API) { toast.error(t({ it: "Modulo non disponibile: scrivici a ", en: "Form unavailable: email us at " }) + EMAIL); return; }
+    if (!ENDPOINT) { toast.error(t({ it: "Modulo non disponibile: scrivici a ", en: "Form unavailable: email us at " }) + EMAIL); return; }
     setStatus("loading");
     try {
-      await axios.post(`${API}/contact`, { ...form, lang });
+      await axios.post(ENDPOINT, { ...form, lang });
       setStatus("done");
       setForm(EMPTY);
     } catch (err) {
       setStatus("idle");
       const s = err?.response?.status;
-      toast.error(s === 429 ? t({ it: "Troppe richieste, riprova tra qualche minuto.", en: "Too many requests, try again in a few minutes." }) : t({ it: "Controlla i campi e riprova.", en: "Please check the fields and try again." }));
+      if (s === 429) toast.error(t({ it: "Troppe richieste, riprova tra qualche minuto.", en: "Too many requests, try again in a few minutes." }));
+      else if (s === 422 || s === 400) toast.error(t({ it: "Controlla i campi e riprova.", en: "Please check the fields and try again." }));
+      else toast.error(t({ it: "Invio non riuscito: scrivici a ", en: "Sending failed: email us at " }) + EMAIL);
     }
   };
 

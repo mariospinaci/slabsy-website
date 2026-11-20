@@ -1,0 +1,13 @@
+# Slabsy - versione di test: non indicizzare
+<IfModule mod_headers.c>
+Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+</IfModule>
+
+# Tutti gli indirizzi delle pagine portano a index.html
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase __BASE__/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+</IfModule>
