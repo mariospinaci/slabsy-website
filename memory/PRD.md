@@ -52,8 +52,8 @@ Home (what/why/different), Products (4 models, shims, labels, services), About, 
 - Offline export: `yarn build:offline` → /app/frontend/offline (HashRouter via REACT_APP_OFFLINE, relative paths, contact = email/phone buttons). Double-click offline/index.html. Re-run after content changes before saving to GitHub.
 
 ## Iteration 9 (2026-11-20)
-- Test export for www.slabsy.it/test/ (classic PHP hosting via FTP): `yarn build:test` → /app/frontend/sito-test (committed). BrowserRouter basename = PUBLIC_URL, /img paths prefixed by scripts/test-fix.mjs, noindex meta + X-Robots-Tag in .htaccess, SPA fallback, no robots/sitemap/llms. Sources in scripts/test-site/ (htaccess.txt, contatti.php, imposta-password.php).
-- Contact form posts to REACT_APP_CONTACT_URL (/test/contatti.php, PHP mail() to info@slabsy.it, email only, no DB). Password: one-time imposta-password.php writes .htpasswd + auth block, then deletes itself.
+- Test export for www.slabsy.it/test/ (classic PHP hosting via FTP): `yarn build:test` → /app/frontend/sito-test (committed). BrowserRouter basename = PUBLIC_URL, /img paths prefixed by scripts/test-fix.mjs, noindex meta + X-Robots-Tag in .htaccess, SPA fallback, no robots/sitemap/llms. Sources in scripts/test-site/ (htaccess.txt, contatti.php, attiva-password.php).
+- Contact form posts to REACT_APP_CONTACT_URL (/test/contatti.php, PHP mail() to info@slabsy.it, email only, no DB). Password: one-time attiva-password.php (user "slabsy", password chosen by the client, only its bcrypt hash is stored) writes .htpasswd + auth block, then deletes itself.
 - Verified on local Apache 2.4 + PHP 8.2 (fake sendmail). NOT verified on the client's real hosting (mail delivery, .htaccess overrides).
 - User decisions: publish target for now = static on classic hosting; Aruba package for the final site postponed; versions via Save to GitHub + GitHub Releases. Respond in Italian.
 - Re-run `yarn build:test` and `yarn build:offline` after content changes before saving to GitHub.

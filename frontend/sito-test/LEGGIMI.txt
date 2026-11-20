@@ -2,11 +2,10 @@ SLABSY - versione di test per www.slabsy.it/test/
 
 1. Carica via FTP TUTTO il contenuto di questa cartella dentro la cartella "test" del sito.
    Attenzione: il file ".htaccess" e' nascosto su alcuni computer, assicurati che venga caricato.
-2. Apri nel browser  https://www.slabsy.it/test/imposta-password.php
-   e scegli nome utente e password. Il file si cancella da solo dopo l'uso.
-3. Apri  https://www.slabsy.it/test/  : il browser chiede nome utente e password.
+2. Apri nel browser  https://www.slabsy.it/test/attiva-password.php
+   La protezione si attiva subito e il file si cancella da solo.
+3. Apri  https://www.slabsy.it/test/  : il browser chiede nome utente (slabsy) e password.
 
-Per cambiare la password: ricarica via FTP il file "imposta-password.php" e ripeti il punto 2.
 Se dopo il punto 2 il sito mostra "Errore 500": ricarica via FTP il file ".htaccess" di questa cartella
 (torna tutto visibile, senza password) e segnalalo.
 

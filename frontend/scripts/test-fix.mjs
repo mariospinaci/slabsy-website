@@ -22,18 +22,17 @@ for (const f of ["robots.txt", "sitemap.xml", "llms.txt"]) rmSync(join(out, f), 
 const asset = (f) => readFileSync(join(here, "test-site", f), "utf8").replaceAll("__BASE__", base).replaceAll("__EMAIL__", EMAIL);
 writeFileSync(join(out, ".htaccess"), asset("htaccess.txt"));
 writeFileSync(join(out, "contatti.php"), asset("contatti.php"));
-writeFileSync(join(out, "imposta-password.php"), asset("imposta-password.php"));
+writeFileSync(join(out, "attiva-password.php"), asset("attiva-password.php"));
 writeFileSync(
   join(out, "LEGGIMI.txt"),
   `SLABSY - versione di test per www.slabsy.it${base}/
 
 1. Carica via FTP TUTTO il contenuto di questa cartella dentro la cartella "${base.slice(1)}" del sito.
    Attenzione: il file ".htaccess" e' nascosto su alcuni computer, assicurati che venga caricato.
-2. Apri nel browser  https://www.slabsy.it${base}/imposta-password.php
-   e scegli nome utente e password. Il file si cancella da solo dopo l'uso.
-3. Apri  https://www.slabsy.it${base}/  : il browser chiede nome utente e password.
+2. Apri nel browser  https://www.slabsy.it${base}/attiva-password.php
+   La protezione si attiva subito e il file si cancella da solo.
+3. Apri  https://www.slabsy.it${base}/  : il browser chiede nome utente (slabsy) e password.
 
-Per cambiare la password: ricarica via FTP il file "imposta-password.php" e ripeti il punto 2.
 Se dopo il punto 2 il sito mostra "Errore 500": ricarica via FTP il file ".htaccess" di questa cartella
 (torna tutto visibile, senza password) e segnalalo.
 
